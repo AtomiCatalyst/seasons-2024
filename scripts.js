@@ -460,7 +460,10 @@ function jsonizeCalendar() {
         jsonElem.y = Math.round(parseInt(elem.style.top) / VERTICAL_SPACING) + 2;
         data.textboxes.push(jsonElem);
     }
-    return JSON.stringify(data);
+    //Adding '[]' around data for MongoDB compatibility
+    
+    string_data = `[${JSON.stringify(data)}]`;
+    return string_data;
 }
 
 // load the calendar from a json object
