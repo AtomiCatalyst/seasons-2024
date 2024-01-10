@@ -457,7 +457,7 @@ function jsonizeCalendar() {
         jsonElem.width = Math.round(parseInt(elem.style.width) / doc_width * 365);
         jsonElem.height = elem.style.height;
         jsonElem.color = elem.style.color;
-        jsonElem.y = Math.round(parseInt(elem.style.top) / VERTICAL_SPACING);
+        jsonElem.y = Math.round(parseInt(elem.style.top) / VERTICAL_SPACING) + 2;
         data.textboxes.push(jsonElem);
     }
     return JSON.stringify(data);
