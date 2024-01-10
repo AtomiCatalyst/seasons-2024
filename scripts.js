@@ -489,7 +489,7 @@ function calendarFromJson(json) {
         boxObj.twin.value = text;
         twinnedStyle(boxObj, "color", color);
         twinnedStyle(boxObj, "width", width + "px");
-        twinnedStyle(boxObj, "height", height);
+        twinnedStyle(boxObj, "height", height + "px");
     }
 
     document.getElementById("name-input").value = data.name;
