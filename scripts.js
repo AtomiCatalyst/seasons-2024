@@ -279,7 +279,7 @@ function setupSeasonEditability(title) {
 
 // ====== TEXTBOX ======
 
-function createTextboxObject(x, y) {
+function createTextboxObject(x, y, text) {
     // if the input would fall of the screen, scroll the calendar so it fits.
     if (x > doc_width - 175) {
         scrollChildrenSideways(box, (doc_width - 175) - x);
@@ -291,7 +291,7 @@ function createTextboxObject(x, y) {
     y -= 8; // center around pointer
     y = Math.round(y / VERTICAL_SPACING) * VERTICAL_SPACING; // align to grid
     const color = document.getElementById("color-picker").value;
-    let textbox = createClassedElementAt(x, y, "", ['textarea'], 'textarea');
+    let textbox = createClassedElementAt(x, y, text, ['textarea'], 'textarea');
 
     textbox.classList.add("storable-textbox")
     twinnedStyle(textbox, 'color', color);
@@ -484,7 +484,7 @@ function calendarFromJson(json) {
         let width = Math.round(elem.width / 365 * doc_width);
         let height = elem.height * VERTICAL_SPACING;
         let color = elem.color;
-        let boxObj = createTextboxObject(x, y);
+        let boxObj = createTextboxObject(x, y, text);
         boxObj.value = text;
         boxObj.twin.value = text;
         twinnedStyle(boxObj, "color", color);
@@ -784,7 +784,7 @@ function addEventListeners() {
             if (mode == BAR) {
                 createSeasonInput(e.clientX, e.clientY);
             } else if(mode == TEXT) {
-                createTextboxObject(e.clientX, e.clientY);
+                createTextboxObject(e.clientX, e.clientY, "");
             }
         }
         mouseDown = false;
