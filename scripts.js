@@ -462,7 +462,7 @@ function jsonizeCalendar() {
     }
     //Adding '[]' around data for MongoDB compatibility
     
-    string_data = `[${JSON.stringify(data)}]`;
+    let string_data = `[${JSON.stringify(data)}]`;
     return string_data;
 }
 
