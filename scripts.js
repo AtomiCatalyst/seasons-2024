@@ -522,16 +522,17 @@ async function submitCalendarToDB() {
     button.innerText = "submitting...";
     button.disabled = true;
     const json = jsonizeCalendar();
-    const response = await fetch("https://f-1.karel.pw/calendardb/put", {
+    /*const response = await fetch("https://f-1.karel.pw/calendardb/put", {
         method: 'POST',
         mode: 'no-cors',
         headers: {
             'Content-Type': 'application/json'
         },
         body: json});
+        */
     button.disabled = false;
     button.innerText ='Submit';
-    console.log(response);
+    console.log(json);
     alert("Calendar saved successfully!");
 
 }
