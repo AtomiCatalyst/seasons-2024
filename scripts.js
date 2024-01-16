@@ -536,7 +536,7 @@ async function submitCalendarToDB() {
     button.disabled = false;
     button.innerText ='Submit';
     console.log(json);
-    alert("Calendar saved successfully!");
+    alert("Calendar saved successfully!\n" + json);
 
 }
 
