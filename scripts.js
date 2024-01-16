@@ -461,9 +461,9 @@ function jsonizeCalendar() {
         data.textboxes.push(jsonElem);
     }
     //Adding '[]' around data for MongoDB compatibility
+    //let string_data = `[${JSON.stringify(data)}]`;
     
-    let string_data = `[${JSON.stringify(data)}]`;
-    return string_data;
+    return JSON.stringify(data);
 }
 
 // load the calendar from a json object
