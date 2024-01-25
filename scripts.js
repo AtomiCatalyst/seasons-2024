@@ -526,6 +526,7 @@ async function submitCalendarToDB() {
     button.disabled = true;
     const json = jsonizeCalendar();
     const response = await fetch("https://app.hook0.com/api/v1/event/", {
+        type: 'POST',
         headers: {
             'Authorization': 'Bearer 1f35edf0-0c8c-422e-a6f2-e87029ff75aa',
             'Accept': 'application/json',
