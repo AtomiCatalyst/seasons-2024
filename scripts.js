@@ -530,9 +530,9 @@ async function submitCalendarToDB() {
         headers: {
             'Authorization': 'Bearer 1f35edf0-0c8c-422e-a6f2-e87029ff75aa',
             'Accept': 'application/json',
-            'Content-Type': 'application/json',
-            'Access-Control-Allow-Origin': '*'
+            'Content-Type': 'application/json'
         },
+        mode: 'cors',
         body: {
             "application_id": "c6d41e77-7644-4041-8a2e-de3516b686d7",
             "event_id": "1111",
