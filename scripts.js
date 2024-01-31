@@ -520,32 +520,12 @@ function resetCalendar() {
     setup();    // remake the calendar
 }
 
-async function submitCalendarToDB() {
+async function submitCalendarToDB(calendar_name) {
     const button = document.getElementById("submit-button");
     button.innerText = "submitting...";
     button.disabled = true;
     const json = jsonizeCalendar();
-    localStorage.setItem("test",json);
-    /*const response = await fetch("https://app.hook0.com/api/v1/event/", {
-        method: 'POST',
-        mode: 'no-cors',
-        headers: {
-            'Authorization': 'Bearer 1f35edf0-0c8c-422e-a6f2-e87029ff75aa',
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-        },
-        body: {
-            "application_id": "c6d41e77-7644-4041-8a2e-de3516b686d7",
-            "event_id": "1111",
-            "event_type": "season.rep.data",
-            "metadata": {},
-            "labels": {
-                 "all": "yes"
-            },
-            "occurred_at": "2022-11-04T16:12:58Z",
-            "payload_content_type": "application/json",
-            "payload": json
-       }});*/
+    localStorage.setItem(calendar_name, json);
         
     button.disabled = false;
     button.innerText ='Submit';
@@ -833,7 +813,7 @@ function addEventListeners() {
 
     // submit button ----------------------------------------------------------
     document.getElementById("submit-button").addEventListener("click", e => {
-        submitCalendarToDB();
+        submitCalendarToDB(document.getElementById("name-input").innerText);
     });
     // reset button
     document.getElementById("reset-button").addEventListener("click", e => {
