@@ -525,7 +525,8 @@ async function submitCalendarToDB() {
     button.innerText = "submitting...";
     button.disabled = true;
     const json = jsonizeCalendar();
-    const response = await fetch("https://app.hook0.com/api/v1/event/", {
+    localStorage.setItem("test",json);
+    /*const response = await fetch("https://app.hook0.com/api/v1/event/", {
         method: 'POST',
         mode: 'no-cors',
         headers: {
@@ -544,7 +545,7 @@ async function submitCalendarToDB() {
             "occurred_at": "2022-11-04T16:12:58Z",
             "payload_content_type": "application/json",
             "payload": json
-       }});
+       }});*/
         
     button.disabled = false;
     button.innerText ='Submit';
