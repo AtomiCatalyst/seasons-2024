@@ -813,7 +813,7 @@ function addEventListeners() {
 
     // submit button ----------------------------------------------------------
     document.getElementById("submit-button").addEventListener("click", e => {
-        submitCalendarToDB(document.getElementById("name-input").innerText);
+        submitCalendarToDB(document.getElementById("name-input").value); //this doesnt work :(
     });
     // reset button
     document.getElementById("reset-button").addEventListener("click", e => {
