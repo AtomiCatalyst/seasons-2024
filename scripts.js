@@ -517,6 +517,7 @@ function resetCalendar() {
     while(box.children.length > 0) {    // delete the calendar
         box.children[0].remove();
     }
+    document.getElementById("json-input").value = "";
     setup();    // remake the calendar
 }
 
