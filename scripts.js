@@ -525,14 +525,14 @@ async function submitCalendarToDB() {
     button.innerText = "submitting...";
     button.disabled = true;
     const json = jsonizeCalendar();
-    /*const response = await fetch("https://app.hook0.com/api/v1/event/", {
+    const response = await fetch("https://app.hook0.com/api/v1/event/", {
         method: 'POST',
+        mode: 'no-cors',
         headers: {
             'Authorization': 'Bearer 1f35edf0-0c8c-422e-a6f2-e87029ff75aa',
             'Accept': 'application/json',
             'Content-Type': 'application/json'
         },
-        mode: 'cors',
         body: {
             "application_id": "c6d41e77-7644-4041-8a2e-de3516b686d7",
             "event_id": "1111",
@@ -545,10 +545,10 @@ async function submitCalendarToDB() {
             "payload_content_type": "application/json",
             "payload": json
        }});
-        */
+        
     button.disabled = false;
     button.innerText ='Submit';
-    console.log(json);
+    console.log(response);
     alert("Calendar saved successfully!\n" + json);
 
 }
