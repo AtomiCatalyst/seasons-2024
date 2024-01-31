@@ -919,7 +919,8 @@ function setupJSONInput() {
     });
 
     input.addEventListener("focusout", e => {
-        fixAndLoadJSON(e.target.value);
+        //fixAndLoadJSON(e.target.value);
+        fixAndLoadJSON(localStorage.getItem(document.getElementById("json-input").value));
         e.target.value = "";
     });
 }
