@@ -532,7 +532,7 @@ async function submitCalendarToDB(calendar_name) {
     button.disabled = false;
     button.innerText ='Submit';
     console.log(json);
-    alert("Calendar saved successfully!\n" + json);
+    alert("Calendar saved successfully!\n");
 
 }
 
@@ -815,7 +815,7 @@ function addEventListeners() {
 
     // submit button ----------------------------------------------------------
     document.getElementById("submit-button").addEventListener("click", e => {
-        submitCalendarToDB(document.getElementById("name-input").value); //this doesnt work :(
+        submitCalendarToDB(document.getElementById("name-input").value);
     });
     // reset button
     document.getElementById("reset-button").addEventListener("click", e => {
@@ -922,7 +922,11 @@ function setupJSONInput() {
 
     input.addEventListener("focusout", e => {
         //fixAndLoadJSON(e.target.value);
-        fixAndLoadJSON(localStorage.getItem(document.getElementById("json-input").value));
+        try {
+            fixAndLoadJSON(localStorage.getItem(document.getElementById("json-input").value));
+        } catch {
+            alert("Unable to find in local storage!");
+        }
         e.target.value = "";
     });
 }
