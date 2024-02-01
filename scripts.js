@@ -816,7 +816,7 @@ function addEventListeners() {
 
     // submit button ----------------------------------------------------------
     document.getElementById("submit-button").addEventListener("click", e => {
-        submitCalendarToDB(document.getElementById("name-input").value);
+        submitCalendarToDB(document.getElementById("name-input").value.toLowerCase());
     });
     // reset button
     document.getElementById("reset-button").addEventListener("click", e => {
@@ -924,7 +924,7 @@ function setupJSONInput() {
     input.addEventListener("focusout", e => {
         //fixAndLoadJSON(e.target.value);
         try {
-            fixAndLoadJSON(localStorage.getItem(document.getElementById("json-input").value));
+            fixAndLoadJSON(localStorage.getItem(document.getElementById("json-input").value.toLowerCase()));
         } catch {
             alert("Unable to find in local storage!");
         }
