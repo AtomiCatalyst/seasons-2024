@@ -62,6 +62,7 @@ function setup() {
     
     document.getElementById("pointer-button").disabled = true;
     document.getElementById("name-input").value = ""; //reset name field
+    document.getElementById("json-input").value = ""; //reset storage lookup field
 }
 
 // parse the query in the url
