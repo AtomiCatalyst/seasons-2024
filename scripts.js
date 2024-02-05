@@ -504,8 +504,8 @@ function calendarFromJson(json) {
 }
 
 function fixAndLoadJSON (json) {
-    const clean_json = json.replaceAll("'", '"');
-    calendarFromJson(clean_json);
+    //const clean_json = json.replaceAll("'", '"');
+    calendarFromJson(json);
 }
 
 function clearCalendar() {
