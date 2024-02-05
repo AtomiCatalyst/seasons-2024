@@ -923,11 +923,11 @@ function setupJSONInput() {
 
     input.addEventListener("focusout", e => {
         //fixAndLoadJSON(e.target.value);
-        try {
+        //try {
             fixAndLoadJSON(localStorage.getItem(document.getElementById("json-input").value.toLowerCase()));
-        } catch {
-            alert("Unable to find in local storage!");
-        }
+       // } catch {
+           // alert("Unable to find in local storage!");
+       // }
         e.target.value = "";
     });
 }
