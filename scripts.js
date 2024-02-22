@@ -529,6 +529,8 @@ async function submitCalendarToDB(calendar_name) {
     button.innerText = "submitting...";
     button.disabled = true;
     const json = jsonizeCalendar();
+    //THIS IS WHERE DATA IS SAVED TO LOCALSTORAGE
+    //RECOMMENDATION: ADD API CALL TO SAVE JSON TO DATABASE
     localStorage.setItem(calendar_name, json);
         
     button.disabled = false;
@@ -817,6 +819,7 @@ function addEventListeners() {
 
     // submit button ----------------------------------------------------------
     document.getElementById("submit-button").addEventListener("click", e => {
+        //Sets name value to lowercase as to discount case sensitivity, though optionally can be removed
         submitCalendarToDB(document.getElementById("name-input").value.toLowerCase());
     });
     // reset button
@@ -923,7 +926,8 @@ function setupJSONInput() {
     });
 
     input.addEventListener("focusout", e => {
-        
+        //THIS IS WHERE YOU LOAD THE DATA FROM LOCALSTORAGE
+        //RECOMMENDATION: PLACE IN API CALL TO RETRIEVE FROM DATABASE
         try {
             fixAndLoadJSON(localStorage.getItem(document.getElementById("json-input").value.toLowerCase()));
         } catch {
